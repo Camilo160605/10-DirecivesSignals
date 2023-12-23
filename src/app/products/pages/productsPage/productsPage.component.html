@@ -1,0 +1,35 @@
+<h1> Agregar producto </h1>
+<hr>
+
+<form [formGroup]="myForm">
+
+  <div class="row g-3 aling-items-center mb-3">
+    <div class="col-auto">
+      <label> Nombre: </label>
+    </div>
+    <div class="col-auto">
+      <input
+      type="text"
+      formControlName="name"
+      class="form-control">
+    </div>
+    <div class="col-auto">
+      <span>Algo de informacion</span>
+    </div>
+
+  </div>
+
+  <button (click)="onSave()" class="btn btn-secondary">
+    Guardar
+  </button>
+
+  <button class="btn btn-primary">
+    Cambiar Color
+  </button>
+
+</form>
+<pre>
+  {{ myForm.value | json}}
+</pre>
+<pre>  {{ myForm.valid | json }}</pre>
+<pre>  {{ myForm.get('name')!.errors | json }}</pre>
