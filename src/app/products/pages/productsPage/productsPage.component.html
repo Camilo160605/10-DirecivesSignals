@@ -44,8 +44,8 @@
 </form>
 
 <div class="mt-5">
-  <p-table [value]="products" [tableStyle]="{ 'min-width': '50rem' }">
-    <ng-template pTemplate="header">
+  <p-table  [value]="products" [tableStyle]="{ 'min-width': '50rem' }">
+    <ng-template pTemplate="header" let-i>
       <tr>
         <th>Code</th>
         <th>Name</th>
@@ -53,8 +53,8 @@
         <th>Quantity</th>
       </tr>
     </ng-template>
-    <ng-template pTemplate="body" let-product let-i="index">
-      <tr>
+    <ng-template pTemplate="body" let-product let-i = "index">
+      <tr  >
         <td>{{ i }}</td>
         <td>{{ product.name }}</td>
         <td>{{ product.category }}</td>
@@ -62,5 +62,11 @@
       </tr>
     </ng-template>
   </p-table>
+</div>
+<div class="row">
+  <ul *ngFor="let product of products; let i = index">
+    <li>{{ i + 1 }}</li>
+    <li>{{ product.name }}</li>
+  </ul>
 </div>
 
