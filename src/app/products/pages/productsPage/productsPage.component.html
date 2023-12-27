@@ -14,9 +14,23 @@
       class="form-control">
     </div>
     <div class="col-auto">
-      <span>Algo de informacion</span>
+      <label> Categoria: </label>
     </div>
-
+    <div class="col-auto">
+      <input
+      type="text"
+      formControlName="category"
+      class="form-control">
+    </div>
+    <div class="col-auto">
+      <label> Cantidad: </label>
+    </div>
+    <div class="col-auto">
+      <input
+      type="number"
+      formControlName="quantity"
+      class="form-control">
+    </div>
   </div>
 
   <button (click)="onSave()" class="btn btn-secondary">
@@ -31,21 +45,22 @@
 
 <div class="mt-5">
   <p-table [value]="products" [tableStyle]="{ 'min-width': '50rem' }">
-      <ng-template pTemplate="header">
-          <tr>
-              <th>Code</th>
-              <th>Name</th>
-              <th>Category</th>
-              <th>Quantity</th>
-          </tr>
-      </ng-template>
-      <ng-template pTemplate="body" let-product>
-          <tr>
-              <td>{{ product.code }}</td>
-              <td>{{ product.name }}</td>
-              <td>{{ product.category }}</td>
-              <td>{{ product.quantity }}</td>
-          </tr>
-      </ng-template>
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Quantity</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-product let-i="index">
+      <tr>
+        <td>{{ i }}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.category }}</td>
+        <td>{{ product.quantity }}</td>
+      </tr>
+    </ng-template>
   </p-table>
 </div>
+

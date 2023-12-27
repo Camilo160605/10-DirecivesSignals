@@ -18,33 +18,33 @@ export class ProductsPageComponent {
 
   public products : Products[] = [
     {
-      name : 'Dayani',
-      code : 1,
-      category: 'Mujer',
+      name     : 'Dayani',
+      code     : 1,
+      category : 'Mujer',
       quantity : 1,
     },
     {
-      name : 'Camilo',
-      code : 2,
-      category: 'Hombre',
+      name     : 'Camilo',
+      code     : 2,
+      category : 'Hombre',
       quantity : 1,
     },
     {
-      name : 'Andrea',
-      code : 3,
-      category: 'Mujer',
+      name     : 'Andrea',
+      code     : 3,
+      category : 'Mujer',
       quantity : 1,
     },
     {
-      name : 'Rogelio',
-      code : 4,
-      category: 'Hombre',
+      name     : 'Rogelio',
+      code     : 4,
+      category : 'Hombre',
       quantity : 1,
     },
     {
-      name : 'Julian',
-      code : 5,
-      category: 'Hombre',
+      name     : 'Julian',
+      code     : 5,
+      category : 'Hombre',
       quantity : 1,
     }
   ];
@@ -54,7 +54,9 @@ export class ProductsPageComponent {
   public color : string = 'green';
 
   public myForm : FormGroup = this.fb.group({
-    name : ['', [ Validators.required, Validators.minLength(6), Validators.email]],
+    name : ['', [ Validators.required, Validators.minLength(6)] ],
+    category : ['', [ Validators.required ] ],
+    quantity : ['', [ Validators.required ] ],
   })
 
   onSave(){
