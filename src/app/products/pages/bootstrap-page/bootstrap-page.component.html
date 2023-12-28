@@ -1,5 +1,17 @@
-<div class="mt-2 col-2">
-  <ul *ngFor="let itemList of itemsList" class="list-group">
-    <li class="list-group-item">{{ itemList }}</li>
+<div class="mt-2 row">
+  <div class="col-2">
+    <ul *ngFor="let itemList of itemsList" class="list-group">
+    <li class="list-group-item"
+      [routerLink]="[itemList.routerLink]"
+      routerLinkActive="active"
+      style="cursor : pointer"
+    >
+      {{ itemList.label }}
+    </li>
   </ul>
+  </div>
+  <div class="col-10">
+    <router-outlet></router-outlet>
+  </div>
 </div>
+

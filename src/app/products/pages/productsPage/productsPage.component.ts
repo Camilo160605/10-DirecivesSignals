@@ -60,7 +60,14 @@ export class ProductsPageComponent {
   })
 
   onSave(){
-    if ( !this.myForm.valid ) return
+    if ( !this.myForm.valid ) {
+      alert('El formulario es invalido')
+      return;
+    }
     console.log(this.myForm.value);
+    const newPerson = this.myForm.value;
+    this.products.push(newPerson);
+    this.myForm.reset();
   }
+
 }
